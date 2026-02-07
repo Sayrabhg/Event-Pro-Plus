@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* bg color  */
+  --white: #ffffff;
+  --primary: #7409f6;
+  --lprimary: #aa64ff;
+  --secondary: #0F172A;
+  --accent: #3B82F6;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --gradient-hero: linear-gradient(135deg, var(--ef-primary) 0%, var(--ef-accent) 50%, var(--ef-success) 100%);
+
+  /* button */
+  --btn-muted: #e5e7eb;
+  --brown: #2b0d03;
+  --btn2: #F59E0B   ;
+
+  /* Hero Gradient: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #10B981 100%)
+Event Card Hover: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(16,185,129,0.1) 100%)
+CTA Button: linear-gradient(45deg, #3B82F6, #1E40AF) */
+
+  /* Primary: #1E3A8A (Deep Navy)        - Headers, navbars, primary buttons
+Secondary: #0F172A (Slate Dark)     - Backgrounds, cards
+Accent: #3B82F6 (Professional Blue) - Links, hover states, icons
+Success: #10B981 (Emerald Green)    - Confirmations, sold badges
+Warning: #F59E0B (Amber)            - Low tickets, pending states
+Danger: #EF4444 (Red)               - Errors, cancellations
+Light: #F8FAFC (Off-white)          - Card backgrounds, surfaces
+Dark: #0F0F23 (Near-black)          - Deep backgrounds */
+
+
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-muted {
+  background-color: var(--btn-muted);
+}
+
+.text-brown {
+  color: var(--brown);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-lprimary {
+  color: var(--lprimary);
+}
+
+.btn1 { background-color: var(--btn2);}
+
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--primary);
+}
+
+/* button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+} */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--primary);
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: var(--primary);
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
