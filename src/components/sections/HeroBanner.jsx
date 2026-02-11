@@ -78,11 +78,11 @@ export default function HeroBanner() {
         ))}
 
         {/* Dark base overlay */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/30" />
 
         {/* 🎨 Color Gradient Overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-purple-900/70 to-purple-700/60"
+          className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-green-400/20"
           style={{
             clipPath: "polygon(0 0, 100% 0, 90% 0%, 0 100%)",
           }}
@@ -209,7 +209,7 @@ export default function HeroBanner() {
         {/* ===== CTA ===== */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <DiscoBallButton name="Create Event" />
-          <button className="px-8 py-4 bg-white/20 rounded-lg font-bold border border-white/30">
+          <button className="px-8 py-4 bg-black/60 rounded-lg font-bold border border-white/30">
             Learn More
           </button>
         </div>

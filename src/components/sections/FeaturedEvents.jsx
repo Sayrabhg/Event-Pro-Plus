@@ -1,6 +1,10 @@
 import { ChevronLeft, ChevronRight, Star, Flame } from "lucide-react";
 import { useState, useEffect } from "react";
 import DiscoButton from "../ui/button";
+import business1 from "../../assets/eventfeatures/Business1.png";
+import concert1 from "../../assets/eventfeatures/Concerts1.avif";
+import education from "../../assets/eventfeatures/Education1.webp";
+import fooddrink1 from "../../assets/eventfeatures/Food & Drink1.jpg";
 
 const featuredEvents = [
   {
@@ -10,7 +14,8 @@ const featuredEvents = [
     price: "$299",
     rating: 4.9,
     reviews: 1203,
-    image: "bg-gradient-to-br from-blue-500 to-cyan-500",
+    image: business1,
+    imgtitle: "bg-gradient-to-br from-blue-500 to-cyan-500",
     hot: true,
     date: "Apr 15-17, 2024",
   },
@@ -21,7 +26,8 @@ const featuredEvents = [
     price: "$89",
     rating: 4.8,
     reviews: 2541,
-    image: "bg-gradient-to-br from-pink-500 to-rose-500",
+    image: concert1,
+    imgtitle: "bg-gradient-to-br from-pink-500 to-rose-500",
     hot: true,
     date: "Jun 21-23, 2024",
   },
@@ -32,7 +38,8 @@ const featuredEvents = [
     price: "$149",
     rating: 4.7,
     reviews: 834,
-    image: "bg-gradient-to-br from-purple-500 to-indigo-500",
+    image: fooddrink1,
+    imgtitle: "bg-gradient-to-br from-purple-500 to-indigo-500",
     hot: false,
     date: "May 5-12, 2024",
   },
@@ -43,7 +50,8 @@ const featuredEvents = [
     price: "$59",
     rating: 4.6,
     reviews: 1567,
-    image: "bg-gradient-to-br from-green-500 to-emerald-500",
+    image: education,
+    imgtitle: "bg-gradient-to-br from-green-500 to-emerald-500",
     hot: true,
     date: "Jul 10-12, 2024",
   },
@@ -119,10 +127,43 @@ export default function FeaturedEvents() {
                 key={idx}
                 className="group rounded-2xl overflow-hidden border border-border hover:border-primary transition-all cursor-pointer hover:shadow-2xl"
               >
-                {/* Image */}
-                <div className={`relative h-48 ${event.image} overflow-hidden flex items-center justify-center`}>
+                {/* Image with color overlay */}
+                <div className="relative h-48 overflow-hidden flex items-center justify-center">
+                  {/* Background color overlay */}
+                  <div
+                    className={`absolute inset-0 ${event.color || "bg-green-500/30"}`}
+                  ></div>
+
+                  {/* Event image */}
+                  <div className="relative h-64 overflow-hidden flex items-center justify-center">
+                    {event.image ? (
+                      // Show image if exists
+                      <img
+                        src={event.image}
+                        alt={event.imgtitle}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      // Fallback: background color + title
+                      <div className={`w-full h-full flex items-center justify-center ${event.color || "bg-green-500/30"}`}>
+                        <h3 className="text-white text-2xl font-bold text-center px-4">
+                          {event.title}
+                        </h3>
+                      </div>
+                    )}
+
+                    {/* HOT badge */}
+                    {event.hot && (
+                      <div className="absolute top-4 right-4 flex text-white items-center gap-1 px-3 py-1 bg-red-500 rounded-full text-xs font-bold">
+                        <Flame className="w-3 h-3" />
+                        HOT
+                      </div>
+                    )}
+                  </div>
+
+                  {/* HOT badge */}
                   {event.hot && (
-                    <div className="absolute top-4 right-4 flex text-white items-center gap-1 px-3 py-1 bg-red-500 s rounded-full text-xs font-bold">
+                    <div className="absolute top-4 right-4 flex text-white items-center gap-1 px-3 py-1 bg-red-500 rounded-full text-xs font-bold">
                       <Flame className="w-3 h-3" />
                       HOT
                     </div>
@@ -142,13 +183,19 @@ export default function FeaturedEvents() {
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`w-4 h-4 ${i < Math.floor(event.rating) ? "fill-secondary text-secondary" : "text-border"
+                          className={`w-4 h-4 ${i < Math.floor(event.rating)
+                            ? "fill-secondary text-secondary"
+                            : "text-border"
                             }`}
                         />
                       ))}
                     </div>
-                    <span className="text-sm font-semibold text-foreground">{event.rating}</span>
-                    <span className="text-xs text-muted-foreground">({event.reviews})</span>
+                    <span className="text-sm font-semibold text-foreground">
+                      {event.rating}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      ({event.reviews})
+                    </span>
                   </div>
 
                   {/* Price and CTA */}
@@ -163,17 +210,31 @@ export default function FeaturedEvents() {
             ))}
           </div>
 
+
           {/* Mobile: 1-column carousel */}
           <div className="md:hidden">
             {[featuredEvents[current]].map((event) => (
               <div
                 key={event.id}
-                className="group rounded-2xl overflow-hidden border border-border hover:border-primary transition-all"
+                className="group rounded-2xl overflow-hidden border border-border hover:border-primary transition-all cursor-pointer hover:shadow-2xl"
               >
-                {/* Image */}
-                <div className={`relative h-64 ${event.image} overflow-hidden flex items-center justify-center`}>
+                {/* Image with color overlay */}
+                <div className="relative h-64 overflow-hidden flex items-center justify-center">
+                  {/* Color overlay */}
+                  <div className={`absolute inset-0 ${event.color || "bg-green-500/30"}`}></div>
+
+                  {/* Event image */}
+                  {event.image && (
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+
+                  {/* HOT badge */}
                   {event.hot && (
-                    <div className="absolute top-4 right-4 text-white flex items-center gap-1 px-3 py-1 bg-red-500 s rounded-full text-xs font-bold">
+                    <div className="absolute top-4 right-4 flex text-white items-center gap-1 px-3 py-1 bg-red-500 rounded-full text-xs font-bold">
                       <Flame className="w-3 h-3" />
                       HOT
                     </div>
@@ -182,7 +243,9 @@ export default function FeaturedEvents() {
 
                 {/* Content */}
                 <div className="p-6 bg-background">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">{event.title}</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    {event.title}
+                  </h3>
                   <p className="text-muted-foreground mb-4">{event.date}</p>
 
                   {/* Rating */}
@@ -191,7 +254,9 @@ export default function FeaturedEvents() {
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`w-4 h-4 ${i < Math.floor(event.rating) ? "fill-secondary text-secondary" : "text-border"
+                          className={`w-4 h-4 ${i < Math.floor(event.rating)
+                            ? "fill-secondary text-secondary"
+                            : "text-border"
                             }`}
                         />
                       ))}
@@ -211,6 +276,7 @@ export default function FeaturedEvents() {
               </div>
             ))}
           </div>
+
 
           {/* Navigation - Mobile */}
           <div className="md:hidden flex gap-2 mt-6 justify-center">
