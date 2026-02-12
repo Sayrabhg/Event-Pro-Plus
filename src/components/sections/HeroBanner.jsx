@@ -82,7 +82,7 @@ export default function HeroBanner() {
 
         {/* 🎨 Color Gradient Overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-green-400/20"
+          className="absolute inset-0 bg-gradient-to-r from-green-600/40 to-green-400/10"
           style={{
             clipPath: "polygon(0 0, 100% 0, 90% 0%, 0 100%)",
           }}

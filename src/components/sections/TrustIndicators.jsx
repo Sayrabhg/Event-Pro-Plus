@@ -203,37 +203,63 @@ export default function TrustIndicators() {
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between mt-8">
-              <div className="flex gap-3">
-                <DiscoButton
-                  onClick={prev}
-                  name={<ChevronLeft className="w-6 h-6 text-white" />}
-                />
-                <DiscoButton
-                  onClick={next}
-                  name={<ChevronRight className="w-6 h-6 text-white" />}
-                />
+            <div
+              className="
+    mt-8
+    flex flex-col items-center gap-4
+    md:flex-row md:items-center md:justify-between
+  "
+            >
+              {/* Left – Arrows */}
+              <div className="flex gap-3 md:justify-start">
+                <button onClick={prev} className="p-0">
+                  <DiscoButton
+                    name={<ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />}
+                  />
+                </button>
+
+                <button onClick={next} className="p-0">
+                  <DiscoButton
+                    name={<ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />}
+                  />
+                </button>
               </div>
 
-              <div className="flex gap-2">
+              {/* Center – Dots */}
+              <div className="flex gap-2 justify-center">
                 {testimonials.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentTestimonial(idx)}
                     className={`
-                      h-2 rounded-full transition-all
-                      ${idx === currentTestimonial
-                        ? "bg-primary w-8 shadow-md"
-                        : "bg-border w-2 hover:bg-muted-foreground"}
-                    `}
-                  />
+          h-2 rounded-full relative transition-all duration-300
+          ${idx === currentTestimonial % testimonials.length
+                        ? "bg-primary w-6 md:w-8 shadow-md"
+                        : "bg-white w-2 hover:bg-muted-foreground"
+                      }
+        `}
+                  >
+                    {idx === currentTestimonial % testimonials.length && (
+                      <span
+                        className="absolute inset-0 rounded-full"
+                        style={{
+                          background:
+                            "linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.5) 50%, transparent 70%)",
+                          backgroundSize: "10px 10px",
+                          animation: "dotShimmer 1s linear infinite",
+                        }}
+                      />
+                    )}
+                  </button>
                 ))}
               </div>
 
-              <p className="text-muted-foreground text-sm">
+              {/* Right – Counter */}
+              <p className="text-muted-foreground text-sm text-center md:text-right">
                 {currentTestimonial + 1} of {testimonials.length}
               </p>
             </div>
+
           </div>
 
           {/* ===================== BRANDS ===================== */}

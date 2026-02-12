@@ -72,7 +72,7 @@ export default function CategoryShowcase() {
                   </div>
 
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-white/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <DiscoButton name="Explore" />
                   </div>
                 </div>

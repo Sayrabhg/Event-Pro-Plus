@@ -9,7 +9,7 @@ const DiscoButton = ({ name = "button" }) => {
             <style>{`
         .disco-btn {
           background: linear-gradient(45deg, #48e22d, #1b8600);
-          box-shadow: 0 0 30px rgba(74,0,224,0.4);
+          box-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
           transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
                       box-shadow 0.4s ease;
         }

@@ -12,7 +12,7 @@ import FooterCTA from "../components/sections/FooterCTA";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Header />
       <HeroBanner />
       <CategoryShowcase />
@@ -29,19 +29,19 @@ export default function Index() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Brand Section */}
             <div>
-              <div className="flex items-center gap-2 font-bold text-xl text-primary mb-4">
+              <div className="flex items-center gap-2 font-bold text-xl mb-4">
                 <Calendar className="w-6 h-6" />
                 EventFlow
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className=" text-sm leading-relaxed">
                 Making event management effortless for organizers and attendees worldwide.
               </p>
             </div>
 
             {/* Product Links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Product</h4>
-              <ul className="space-y-3 text-sm text-muted-foreground">
+              <h4 className="font-semibold mb-4">Product</h4>
+              <ul className="space-y-3 text-sm">
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
                     Features

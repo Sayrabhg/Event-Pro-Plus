@@ -74,7 +74,7 @@ Dark: #0F0F23 (Near-black)          - Deep backgrounds */
 
 a {
   font-weight: 500;
-  color: var(--primary);
+  /* color: var(--primary); */
   text-decoration: inherit;
 }
 

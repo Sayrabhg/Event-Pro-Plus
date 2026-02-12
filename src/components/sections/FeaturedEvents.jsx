@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import DiscoButton from "../ui/button";
 import business1 from "../../assets/eventfeatures/Business1.png";
 import concert1 from "../../assets/eventfeatures/Concerts1.avif";
-import education from "../../assets/eventfeatures/Education1.webp";
+import education from "../../assets/eventfeatures/Education1.jpg";
 import fooddrink1 from "../../assets/eventfeatures/Food & Drink1.jpg";
 
 const featuredEvents = [
@@ -151,14 +151,6 @@ export default function FeaturedEvents() {
                         </h3>
                       </div>
                     )}
-
-                    {/* HOT badge */}
-                    {event.hot && (
-                      <div className="absolute top-4 right-4 flex text-white items-center gap-1 px-3 py-1 bg-red-500 rounded-full text-xs font-bold">
-                        <Flame className="w-3 h-3" />
-                        HOT
-                      </div>
-                    )}
                   </div>
 
                   {/* HOT badge */}
@@ -224,13 +216,23 @@ export default function FeaturedEvents() {
                   <div className={`absolute inset-0 ${event.color || "bg-green-500/30"}`}></div>
 
                   {/* Event image */}
-                  {event.image && (
-                    <img
-                      src={event.image}
-                      alt={event.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
+                  <div className="relative h-64 overflow-hidden flex items-center justify-center">
+                    {event.image ? (
+                      // Show image if exists
+                      <img
+                        src={event.image}
+                        alt={event.imgtitle}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      // Fallback: background color + title
+                      <div className={`w-full h-full flex items-center justify-center ${event.color || "bg-green-500/30"}`}>
+                        <h3 className="text-white text-2xl font-bold text-center px-4">
+                          {event.title}
+                        </h3>
+                      </div>
+                    )}
+                  </div>
 
                   {/* HOT badge */}
                   {event.hot && (
@@ -268,7 +270,7 @@ export default function FeaturedEvents() {
                   {/* Price and CTA */}
                   <div className="flex items-center justify-between">
                     <span className="text-3xl font-bold text-primary">{event.price}</span>
-                    <button className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all">
+                    <button className="px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all">
                       Get Tickets
                     </button>
                   </div>
@@ -277,63 +279,60 @@ export default function FeaturedEvents() {
             ))}
           </div>
 
-
-          {/* Navigation - Mobile */}
-          <div className="md:hidden flex gap-2 mt-6 justify-center">
-            <button
-              onClick={prev}
-              className="p-3 rounded-lg border-2 border-border hover:border-primary hover:bg-primary/10 transition-all"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={next}
-              className="p-3 rounded-lg border-2 border-border hover:border-primary hover:bg-primary/10 transition-all"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
-          {featuredEvents.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                setCurrent(idx);
-                setIsAutoplay(false);
-              }}
-              className={`h-2 rounded-full transition-all relative overflow-hidden
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {featuredEvents.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setCurrent(idx);
+                  setIsAutoplay(false);
+                }}
+                className={`h-2 rounded-full transition-all relative overflow-hidden
       ${idx === current % featuredEvents.length
-                  ? "bg-primary w-8"
-                  : "bg-muted w-2 hover:bg-muted"
-                }`}
-            >
-              {/* Optional small shimmer for active dot */}
-              {idx === current % featuredEvents.length && (
-                <span
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%), linear-gradient(-45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%)",
-                    backgroundSize: "10px 10px",
-                    animation: "dotShimmer 1s linear infinite",
-                    borderRadius: "9999px",
-                  }}
-                />
-              )}
-            </button>
-          ))}
+                    ? "bg-primary w-8"
+                    : "bg-muted w-2 hover:bg-muted"
+                  }`}
+              >
+                {/* Optional small shimmer for active dot */}
+                {idx === current % featuredEvents.length && (
+                  <span
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%), linear-gradient(-45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%)",
+                      backgroundSize: "10px 10px",
+                      animation: "dotShimmer 1s linear infinite",
+                      borderRadius: "9999px",
+                    }}
+                  />
+                )}
+              </button>
+            ))}
 
-          {/* CSS keyframes for small dot shimmer */}
-          <style>{`
+            {/* CSS keyframes for small dot shimmer */}
+            <style>{`
   @keyframes dotShimmer {
     0% { background-position: 0 0, 0 0; }
     100% { background-position: 10px 10px, -10px -10px; }
   }
 `}</style>
 
+          </div>
+
+          {/* Navigation - Mobile */}
+          <div className="md:hidden flex gap-2 mt-6 justify-center">
+            <button
+              onClick={prev}
+              className="p-0" >
+              <DiscoButton name={<ChevronLeft className="w-5 h-5" />}></DiscoButton>
+            </button>
+            <button
+              onClick={next}
+              className="p-0" >
+              <DiscoButton name={<ChevronRight className="w-5 h-5" />}></DiscoButton>
+            </button>
+          </div>
         </div>
       </div>
     </section>

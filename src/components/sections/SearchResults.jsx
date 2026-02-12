@@ -85,7 +85,7 @@ export default function SearchResults() {
         </h2>
 
         {/* Filter Bar */}
-        <div className="sticky top-16 bg-white border-b pb-4 mb-8 z-10">
+        <div className="sticky top-20 bg-white border-b p-4 z-10">
           <div className="flex justify-between items-center gap-4 mb-4">
 
             {/* -------- SORT DROPDOWN -------- */}
