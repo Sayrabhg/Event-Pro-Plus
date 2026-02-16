@@ -208,7 +208,7 @@ export default function HeroBanner() {
 
         {/* ===== CTA ===== */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <DiscoBallButton name="Create Event" />
+          <a href="/auth"><DiscoBallButton name="Create Event" /></a>
           <button className="px-8 py-4 bg-black/60 rounded-lg font-bold border border-white/30">
             Learn More
           </button>

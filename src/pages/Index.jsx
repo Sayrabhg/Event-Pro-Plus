@@ -12,7 +12,7 @@ import FooterCTA from "../components/sections/FooterCTA";
 
 export default function Index() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
       <HeroBanner />
       <CategoryShowcase />
@@ -24,23 +24,23 @@ export default function Index() {
       <FooterCTA />
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-16">
+      <footer className="bg-lightgreen text-white border-t border-border py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Brand Section */}
             <div>
               <div className="flex items-center gap-2 font-bold text-xl mb-4">
                 <Calendar className="w-6 h-6" />
-                EventFlow
+                Zest Activation
               </div>
-              <p className=" text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed">
                 Making event management effortless for organizers and attendees worldwide.
               </p>
             </div>
 
             {/* Product Links */}
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
+              <h4 className="font-semibold text-white mb-4">Product</h4>
               <ul className="space-y-3 text-sm">
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
@@ -67,7 +67,7 @@ export default function Index() {
 
             {/* Company Links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Company</h4>
+              <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
@@ -94,11 +94,11 @@ export default function Index() {
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+              <h4 className="font-semibold text-white mb-4">Contact</h4>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2 hover:text-primary transition-colors cursor-pointer">
                   <Mail className="w-4 h-4" />
-                  support@eventflow.io
+                  support@Zest Activation.io
                 </li>
                 <li className="flex items-center gap-2 hover:text-primary transition-colors cursor-pointer">
                   <Phone className="w-4 h-4" />
@@ -115,7 +115,7 @@ export default function Index() {
           {/* Divider */}
           <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2024 EventFlow. All rights reserved.
+              © 2024 Zest Activation. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">

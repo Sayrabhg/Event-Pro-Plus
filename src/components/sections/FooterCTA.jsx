@@ -30,7 +30,7 @@ export default function FooterCTA() {
   };
 
   return (
-    <section className="py-20 sm:py-32 bg-gradient-to-r from-primary via-purple-600 to-secondary">
+    <section className="py-20 sm:py-32 bg-muted">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Headline */}
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold s mb-6">
@@ -53,7 +53,7 @@ export default function FooterCTA() {
                 placeholder="Enter your email address..."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 sm:py-4 bg-white/20 s placeholder-white/60 rounded-lg border border-white/30 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+                className="w-full pl-12 pr-4 py-3 sm:py-4 bg-white/20 rounded-lg border border-white/30 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
               />
             </div>
 

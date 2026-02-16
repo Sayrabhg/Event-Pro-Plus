@@ -76,16 +76,16 @@ export default function SearchResults() {
   /* ---------------------------- JSX ----------------------------- */
 
   return (
-    <section className="py-20 sm:py-28 bg-card">
+    <section className="py-20 sm:py-28 bg-lightgreen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <h2 className="text-3xl sm:text-4xl font-bold mb-8">
+        <h2 className="text-3xl text-white sm:text-4xl font-bold mb-8">
           Browse All Events ({filteredEvents.length})
         </h2>
 
         {/* Filter Bar */}
-        <div className="sticky top-20 bg-white border-b p-4 z-10">
+        <div className="sticky top-24 bg-white rounded-xl mb-4 border-b p-4 z-10">
           <div className="flex justify-between items-center gap-4 mb-4">
 
             {/* -------- SORT DROPDOWN -------- */}
@@ -182,7 +182,7 @@ export default function SearchResults() {
             {filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="group rounded-xl overflow-hidden border border-border hover:border-primary hover:shadow-lg transition-all cursor-pointer"
+                className="group bg-white rounded-xl overflow-hidden hover:shadow-lg transition-all cursor-pointer"
               >
                 {/* Image */}
                 <div className={`${event.image} h-40 relative`}>
@@ -231,7 +231,7 @@ export default function SearchResults() {
             {filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="group relative p-4 rounded-lg border border-border 
+                className="group bg-white relative p-4 rounded-lg border border-border 
                    transition-all duration-300 ease-out
                    hover:-translate-y-1 hover:border-primary
                    hover:bg-muted/60 hover:shadow-lg

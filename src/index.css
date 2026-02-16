@@ -17,6 +17,7 @@
   /* bg color  */
   --white: #ffffff;
   --primary: #3d823c;
+  --lightgreen: #0F3D2E;
   --lprimary: #6ae867;
   --secondary: #0F172A;
   --accent: #3B82F6;
@@ -28,7 +29,7 @@
   /* button */
   --btn-muted: #e5e7eb;
   --brown: #2b0d03;
-  --btn2: #F59E0B   ;
+  --btn2: #F59E0B;
 
   /* Hero Gradient: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #10B981 100%)
 Event Card Hover: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(16,185,129,0.1) 100%)
@@ -46,8 +47,31 @@ Dark: #0F0F23 (Near-black)          - Deep backgrounds */
 
 }
 
+/* .dark {
+  /* bg color  
+  --white: #ffffff;
+  --primary: #3d823c;
+  --lightgreen: #0F3D2E;
+  --lprimary: #6ae867;
+  --secondary: #0F172A;
+  --accent: #3B82F6;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --gradient-hero: linear-gradient(135deg, var(--ef-primary) 0%, var(--ef-accent) 50%, var(--ef-success) 100%);
+
+  /* button 
+  --btn-muted: #e5e7eb;
+  --brown: #2b0d03;
+  --btn2: #F59E0B;
+} */
+
 .bg-primary {
   background-color: var(--primary);
+}
+
+.bg-lightgreen {
+  background-color: var(--lightgreen);
 }
 
 .bg-white {
@@ -70,7 +94,9 @@ Dark: #0F0F23 (Near-black)          - Deep backgrounds */
   color: var(--lprimary);
 }
 
-.btn1 { background-color: var(--btn2);}
+.btn1 {
+  background-color: var(--btn2);
+}
 
 a {
   font-weight: 500;

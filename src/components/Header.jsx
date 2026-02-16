@@ -13,7 +13,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 font-bold text-lg sm:text-xl text-primary hover:text-primary/90 transition-colors">
             <Calendar className="w-6 h-6" />
-            <span className="hidden sm:inline">EventFlow</span>
+            <span className="hidden sm:inline">Zest Activation</span>
           </Link>
 
           {/* Desktop Navigation */}

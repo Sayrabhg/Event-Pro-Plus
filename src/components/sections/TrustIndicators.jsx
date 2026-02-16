@@ -1,6 +1,11 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import DiscoButton from "../ui/button";
+import googleLogo from "../../assets/logo/googleLogo.png";
+import microsoftLogo from "../../assets/logo/microsoftLogo.png";
+import stripeLogo from "../../assets/logo/stripeLogo.jpg";
+import slackLogo from "../../assets/logo/SlackLogo.jpg";
+import githubLogo from "../../assets/logo/githubLogo.png";
 
 /* ===================== IN VIEW HOOK ===================== */
 function useInView(options = { threshold: 0.3 }) {
@@ -35,7 +40,7 @@ const testimonials = [
     role: "Event Organizer",
     image: "bg-gradient-to-br from-pink-400 to-rose-400",
     text:
-      "EventFlow transformed how I manage events. The interface is intuitive and the features are exactly what we needed.",
+      "Zest Activation transformed how I manage events. The interface is intuitive and the features are exactly what we needed.",
     rating: 5,
   },
   {
@@ -59,7 +64,7 @@ const testimonials = [
     role: "Workshop Creator",
     image: "bg-gradient-to-br from-green-400 to-emerald-400",
     text:
-      "Customer support is outstanding and the platform is incredibly reliable. Highly recommend EventFlow!",
+      "Customer support is outstanding and the platform is incredibly reliable. Highly recommend Zest Activation!",
     rating: 5,
   },
 ];
@@ -112,13 +117,7 @@ export default function TrustIndicators() {
     <section className="
       relative overflow-hidden
   py-20 sm:py-32
-  bg-gradient-to-tr
-  from-pink-50 via-orange-50 to-yellow-50
-  dark:from-pink-950 dark:via-orange-950 dark:to-yellow-950
     ">
-      {/* Decorative glow */}
-      <div className="absolute top-10 left-10 w-72 h-72 bg-indigo-300/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -235,7 +234,7 @@ export default function TrustIndicators() {
           h-2 rounded-full relative transition-all duration-300
           ${idx === currentTestimonial % testimonials.length
                         ? "bg-primary w-6 md:w-8 shadow-md"
-                        : "bg-white w-2 hover:bg-muted-foreground"
+                        : "bg-muted w-2 hover:bg-muted-foreground"
                       }
         `}
                   >
@@ -269,25 +268,32 @@ export default function TrustIndicators() {
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 justify-items-center">
-              {["Google", "Microsoft", "Stripe", "Slack", "GitHub"].map(
-                (brand) => (
-                  <div
-                    key={brand}
-                    className="
-                      w-32 h-12 rounded-lg
-                      bg-card/80 backdrop-blur
-                      border border-border
-                      flex items-center justify-center
-                      hover:border-primary hover:scale-105
-                      transition-all
-                    "
-                  >
-                    <span className="font-bold text-foreground/60 text-sm">
-                      {brand}
-                    </span>
-                  </div>
-                )
-              )}
+              {brands.map((brand) => (
+                <div
+                  key={brand.name}
+                  className="
+        rounded-xl
+        py-4 px-10
+        bg-card/80 backdrop-blur
+        border border-border
+        flex flex-col items-center justify-center gap-2
+        hover:border-primary hover:scale-105
+        transition-all
+      "
+                >
+                  {/* Logo */}
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="h-10 w-auto object-contain"
+                  />
+
+                  {/* Brand Name */}
+                  <span className="font-semibold text-foreground/70 text-sm">
+                    {brand.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -295,3 +301,26 @@ export default function TrustIndicators() {
     </section>
   );
 }
+
+const brands = [
+  {
+    name: "Google",
+    logo: googleLogo,
+  },
+  {
+    name: "Microsoft",
+    logo: microsoftLogo,
+  },
+  {
+    name: "Stripe",
+    logo: stripeLogo,
+  },
+  {
+    name: "Slack",
+    logo: slackLogo,
+  },
+  {
+    name: "GitHub",
+    logo: githubLogo,
+  },
+];

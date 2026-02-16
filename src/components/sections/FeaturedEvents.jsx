@@ -89,15 +89,15 @@ export default function FeaturedEvents() {
   }
 
   return (
-    <section className="py-20 sm:py-28 bg-card">
+    <section className="py-20 sm:py-28 text-primary bg-lightgreen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-2">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
               Featured Events
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-white/80">
               Trending and popular events happening soon
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function FeaturedEvents() {
             {visibleEvents.map((event, idx) => (
               <div
                 key={idx}
-                className="group rounded-2xl overflow-hidden border border-border hover:border-primary transition-all cursor-pointer hover:shadow-2xl"
+                className="group bg-white rounded-2xl overflow-hidden transition-all cursor-pointer hover:shadow-2xl"
               >
                 {/* Image with color overlay */}
                 <div className="relative h-48 overflow-hidden flex items-center justify-center">
@@ -193,7 +193,7 @@ export default function FeaturedEvents() {
                   {/* Price and CTA */}
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-primary">{event.price}</span>
-                    <button className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all">
+                    <button className="px-4 py-2 bg-muted text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all">
                       View
                     </button>
                   </div>
