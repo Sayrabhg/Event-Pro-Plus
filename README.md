@@ -1,16 +1,91 @@
-# React + Vite
+# 🎉 Event-Pro-Plus Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend application** of **Event-Pro-Plus**, an event management platform designed to help users explore, create, and manage events بسهولة through an intuitive and responsive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+* 🔐 User Authentication UI (Login / Register)
+* 📅 Browse and explore events
+* ➕ Create and manage events
+* 📝 Event details page with dynamic data
+* 🔍 Search and filter events
+* 📱 Fully responsive design
+* ⚡ Fast and interactive UI with React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React.js** – Component-based frontend framework
+* **Tailwind CSS / Bootstrap** – Styling and responsiveness
+* **Axios / Fetch API** – API communication
+* **React Router** – Navigation and routing
+* **Framer Motion** – Animations (optional)
+
+---
+
+## 📂 Project Structure
+
+```bash id="0nfd11"
+src/
+│── assets/        # Images, icons
+│── components/    # Reusable components
+│── pages/         # Pages (Home, Events, Create Event, etc.)
+│── api/           # API integration
+│── styles/        # CSS files
+│── App.jsx        # Main app
+│── main.jsx       # Entry point
+```
+
+---
+
+## ⚙️ Setup & Installation
+
+1. Clone the repository:
+
+```bash id="gkdt8z"
+git clone https://github.com/Sayrabhg/Event-Pro-Plus.git
+```
+
+2. Navigate to the folder:
+
+```bash id="g79lrz"
+cd event-pro-plus
+```
+
+3. Install dependencies:
+
+```bash id="fj0uxo"
+npm install
+```
+
+4. Start development server:
+
+```bash id="hf5o02"
+npm run dev
+```
+
+---
+
+## 🔗 API Configuration
+
+Make sure backend is running.
+
+```javascript id="n8v6ra"
+const API_BASE_URL = "http://localhost:8080/api";
+```
+---
+
+## 📌 Future Enhancements
+
+* 🎟️ Ticket booking system
+* 💳 Payment integration
+* 🔔 Notifications
+* ⭐ Reviews & ratings
+* 🌙 Dark mode
+
+---
+
+✨ *Frontend designed for seamless event management experience.*
