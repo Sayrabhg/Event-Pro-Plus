@@ -19,7 +19,7 @@ This is the **frontend application** of **Event-Pro-Plus**, an event management 
 ## 🛠️ Tech Stack
 
 * **React.js** – Component-based frontend framework
-* **Tailwind CSS / Bootstrap** – Styling and responsiveness
+* **Tailwind CSS** – Styling and responsiveness
 * **Axios / Fetch API** – API communication
 * **React Router** – Navigation and routing
 * **Framer Motion** – Animations (optional)
